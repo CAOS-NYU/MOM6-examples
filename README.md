@@ -64,3 +64,12 @@ or activity by DOC or the United States Government.
 
 This project code is made available through GitHub but is managed by NOAA-GFDL
 at https://gitlab.gfdl.noaa.gov.
+
+# NYU-specific
+I recommend following the instructions outlined in the MOM6-examples wiki, especially creating your own fork so you can track your own changes. 
+The main files that are needed are the environment file, located in `build/intel/env`, and the makefile template `greene-intel.mk` which belongs in `src/mkmf/templates/greene-intel.mk`. The compilation commands are then the same as in the wiki but with greene-intel.mk replacing all of the default templates. For instance, for building the FMS shared code:
+```
+(cd build/intel/shared/repro/; rm -f path_names; \
+../../../../src/mkmf/bin/list_paths -l ../../../../src/FMS; \
+../../../../src/mkmf/bin/mkmf -t ../../../../src/mkmf/templates/greene-intel.mk -p libfms.a -c "-Duse_libMPI -Duse_netCDF" path_names)
+``
