@@ -1,0 +1,12 @@
+module unload PrgEnv-pgi
+module unload PrgEnv-pathscale
+module unload PrgEnv-intel
+module unload PrgEnv-gnu
+module unload PrgEnv-gnu
+module unload PrgEnv-cray
+
+module load intel/19.1.2
+module load openmpi/intel/4.0.5
+module unload netcdf
+module load netcdf-fortran/intel/4.5.3
+module load hdf5/intel/1.12.0
